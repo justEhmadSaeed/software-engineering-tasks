@@ -92,9 +92,25 @@ namespace cSharp {
         ~Student() {
             Console.WriteLine("​Destructor Called.");
         }
-        public void display() {
+        public int getSemesters() {
+            int[] semesters = new int[8];
+            // for (int i = 0; i < semesters.Length; i++) {
+            //     semesters[co]
+            // }
+            foreach (var course in courses)
+                semesters[course.semester]++;
+
+            int count = 0;
+            for (int i = 0; i < semesters.Length; i++) {
+                if (semesters[i] != 0)
+                    count++;
+            }
+            return count;
+        }
+        public void tostring() {
             Console.WriteLine("Name: " + studentName);
             Console.WriteLine("Registration Number: " + reg_no);
+            Console.WriteLine("Degree: " + degree);
         }
     }
 }
