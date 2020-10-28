@@ -100,6 +100,20 @@ namespace cSharp {
             this.marks = 99;
             this.semester = 9;
         }
+        public CourseResult(string id, string title, int hrs, int score, int sem) {
+            this.course_id = id;
+            this.course_title = title;
+            this.credit_hrs = hrs;
+            this.marks = score;
+            this.semester = sem;
+        }
+        public CourseResult(CourseResult course){
+            this.course_id = course.course_id;
+            this.course_title = course.course_title;
+            this.credit_hrs = course.credit_hrs;
+            this.marks = course.marks;
+            this.semester = course.semester;
+        }
         public string getGrade() {
             if (marks >= 80)
                 return "A";
