@@ -86,12 +86,9 @@ namespace cSharp {
                 while (value < 0.0 || value > 4.0) {
                     Console.WriteLine("CGPA must be between 0 & 4");
                     string temp = Console.ReadLine();
-                    int i;
-                    for (i = 0; i < temp.Length; i++)
-                        if (!char.IsDigit(temp[i]))
-                            break;
-                    if (i == temp.Length && temp.Length != 0)
-                        value = Convert.ToDouble(temp);
+                    double gpa;
+                    if (Double.TryParse(temp, out gpa))
+                        value = gpa;
                 }
                 p_cgpa = value;
             }
@@ -156,16 +153,11 @@ namespace cSharp {
             string temp;
             Console.WriteLine("CGPA: ");
             temp = Console.ReadLine();
-            int i;
-
-            for (i = 0; i < temp.Length; i++)
-                if (!char.IsDigit(temp[i]))
-                    break;
-
-            if (i < temp.Length || temp.Length == 0)
-                cgpa = -1;
+            double gpa;
+            if (Double.TryParse(temp, out gpa))
+                cgpa = gpa;
             else
-                cgpa = Convert.ToDouble(temp);
+                cgpa = -1;
 
             Console.WriteLine("Date of Birth:(DD-MM-YYYY) ");
             this.dob = Convert.ToDateTime(Console.ReadLine());
