@@ -98,7 +98,7 @@ namespace cSharp {
             this.course_title = "Software Engineering Lab";
             this.credit_hrs = 3;
             this.marks = 99;
-            this.semester = 9;
+            this.semester = 1;
         }
         public CourseResult(string id, string title, int hrs, int score, int sem) {
             this.course_id = id;
@@ -107,7 +107,7 @@ namespace cSharp {
             this.marks = score;
             this.semester = sem;
         }
-        public CourseResult(CourseResult course){
+        public CourseResult(CourseResult course) {
             this.course_id = course.course_id;
             this.course_title = course.course_title;
             this.credit_hrs = course.credit_hrs;
@@ -148,6 +148,16 @@ namespace cSharp {
             else if (grade == "D")
                 return 1.0;
             else return 0;
+
+        }
+        public void tostring() {
+            Console.WriteLine("Course Title: " + course_title);
+            Console.WriteLine("Course ID: " + course_id);
+            Console.WriteLine("Semester: " + semester);
+            Console.WriteLine("Credit Hours: " + credit_hrs);
+            Console.WriteLine("Marks: " + marks);
+            Console.WriteLine("Grade: " + getGrade());
+            Console.WriteLine("Grade Points: " + getGradePoints());
         }
     }
 
