@@ -1,3 +1,5 @@
+// Ahmad Saeed
+// 2018-CS-1
 using System;
 
 namespace cSharp {
@@ -18,7 +20,15 @@ namespace cSharp {
             for (int i = 0; i < courses.Length; i++) {
                 std1.courses.Add(courses[i]);
             }
-            std1.tostring();
+            Student std2 = new Student();
+            std2.courses.Add(new CourseResult("CS098", "Programming Fundamentals", 3, 45, 2));
+            std2.studentName = "John Wick";
+            std2.reg_no = "2016-CS-9";
+            Section cs18 = new Section();
+            cs18.AddStudent(std1);
+            cs18.AddStudent(std2);
+            cs18.ListofStudents();
+            cs18.ListofSuspendedStudents();
         }
     }
 }
