@@ -106,6 +106,19 @@ namespace cSharp {
             }
             return count;
         }
+        public List<int> getSemesterList() {
+            int[] semesters = new int[9];
+
+            foreach (var course in courses)
+                semesters[course.semester]++;
+
+            List<int> semList = new List<int>();
+            for (int i = 0; i < semesters.Length; i++) {
+                if (semesters[i] != 0)
+                    semList.Add(i);
+            }
+            return semList;
+        }
         public double getSemesterGPA(int semester) {
             double scoreSum = 0;
             int cdhrSum = 0;
@@ -133,15 +146,33 @@ namespace cSharp {
             }
             return count;
         }
+        public int getSemesterCreditHours(int semester) {
+            int count = 0;
+            foreach (var course in courses) {
+                if (course.semester == semester)
+                    count += course.credit_hrs;
+            }
+            return count;
+        }
+        public int getSession() => int.Parse(reg_no.Substring(0, 4));
+
+        public string getDiscipline() => reg_no.Substring(5, 2);
         public void tostring() {
-            Console.WriteLine("Name: " + studentName);
+            Console.WriteLine("Name: " + studentName + "    Degree: " + degree + " " + getDiscipline());
             Console.WriteLine("Registration Number: " + reg_no);
-            Console.WriteLine("Degree: " + degree);
-            Console.WriteLine("Number of Semesters: " + getSemesters());
-            Console.WriteLine("Gpa of Semester 4: " + getSemesterGPA(4));
-            Console.WriteLine("Gpa of Semester 5: " + getSemesterGPA(5));
-            Console.WriteLine("CGPA: " + getCGPA());
-            Console.WriteLine("Total Credit Hours: " + getTotalCreditHours());
+            Console.WriteLine("Session: " + getSession());
+            foreach (var sem in getSemesterList()) {
+                Console.WriteLine("Semester: " + sem);
+                Console.WriteLine(String.Format("|{0,-10}|{1,-35}|{2,-10}|{3,-10}|{4,-10}|", "ID", "Name", "CH", "Marks", "Grade"));
+                foreach (var course in courses) {
+                    if (course.semester == sem)
+                        Console.WriteLine(String.Format("|{0,-10}|{1,-35}|{2,-10}|{3,-10}|{4,-10}|", course.course_id, course.course_title, course.credit_hrs, course.marks, course.getGrade()));
+                }
+                Console.WriteLine(String.Format("|{0,79}|", "SGPA: " + getSemesterGPA(sem)));
+
+            }
+            Console.WriteLine(String.Format("|{0,79}|", "CGPA: " + getCGPA()));
+
         }
     }
 }
