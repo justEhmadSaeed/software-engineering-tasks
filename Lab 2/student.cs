@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace cSharp {
     public class Student {
@@ -79,12 +79,13 @@ namespace cSharp {
                 deg = value;
             }
         }
-
+        public List<CourseResult> courses;
         // Default Constructor with no parameters
         public Student() {
             this.studentName = "Ehmad Saeed";
             this.reg_no = "2018-CS-1";
             this.degree = "BS";
+            courses = new List<CourseResult>();
 
         }
         // Destructor
