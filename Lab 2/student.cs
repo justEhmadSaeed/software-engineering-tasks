@@ -126,10 +126,22 @@ namespace cSharp {
             }
             return Math.Round(scoreSum / cdhrSum, 3);
         }
+        public int getTotalCreditHours() {
+            int count = 0;
+            foreach (var course in courses) {
+                count += course.credit_hrs;
+            }
+            return count;
+        }
         public void tostring() {
             Console.WriteLine("Name: " + studentName);
             Console.WriteLine("Registration Number: " + reg_no);
             Console.WriteLine("Degree: " + degree);
+            Console.WriteLine("Number of Semesters: " + getSemesters());
+            Console.WriteLine("Gpa of Semester 4: " + getSemesterGPA(4));
+            Console.WriteLine("Gpa of Semester 5: " + getSemesterGPA(5));
+            Console.WriteLine("CGPA: " + getCGPA());
+            Console.WriteLine("Total Credit Hours: " + getTotalCreditHours());
         }
     }
 }

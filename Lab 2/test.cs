@@ -5,7 +5,6 @@ namespace cSharp {
         static void Main(string[] args) {
 
             Student std1 = new Student();
-            std1.tostring();
             CourseResult[] courses = new CourseResult[6];
             courses[0] = new CourseResult("CS123", "Artificial Intelligence", 3, 89, 5);
             courses[1] = new CourseResult("CS124", "Software Engineering", 3, 89, 5);
@@ -19,10 +18,7 @@ namespace cSharp {
             for (int i = 0; i < courses.Length; i++) {
                 std1.courses.Add(courses[i]);
             }
-            Console.WriteLine("Number of Semesters: " +  std1.getSemesters());
-            Console.WriteLine("Gpa of Semester 4: " +  std1.getSemesterGPA(4));
-            Console.WriteLine("Gpa of Semester 5: " +  std1.getSemesterGPA(5));
-            Console.WriteLine("CGPA: " +  std1.getCGPA());
+            std1.tostring();
         }
     }
 }
