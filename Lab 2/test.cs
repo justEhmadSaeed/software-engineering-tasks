@@ -20,8 +20,9 @@ namespace cSharp {
                 std1.courses.Add(courses[i]);
             }
             Console.WriteLine("Number of Semesters: " +  std1.getSemesters());
-            Console.WriteLine("Gpa/Semester 4: " +  std1.getSemesterGPA(4));
-            Console.WriteLine("Gpa/Semester 5: " +  std1.getSemesterGPA(5));
+            Console.WriteLine("Gpa of Semester 4: " +  std1.getSemesterGPA(4));
+            Console.WriteLine("Gpa of Semester 5: " +  std1.getSemesterGPA(5));
+            Console.WriteLine("CGPA: " +  std1.getCGPA());
         }
     }
 }

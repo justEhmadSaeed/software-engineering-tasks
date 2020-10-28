@@ -115,7 +115,16 @@ namespace cSharp {
                     cdhrSum += course.credit_hrs;
                 }
             }
-            return Math.Round(scoreSum/cdhrSum, 3);
+            return Math.Round(scoreSum / cdhrSum, 3);
+        }
+        public double getCGPA() {
+            double scoreSum = 0;
+            int cdhrSum = 0;
+            foreach (var course in courses) {
+                scoreSum += course.getGradePoints() * course.credit_hrs;
+                cdhrSum += course.credit_hrs;
+            }
+            return Math.Round(scoreSum / cdhrSum, 3);
         }
         public void tostring() {
             Console.WriteLine("Name: " + studentName);
