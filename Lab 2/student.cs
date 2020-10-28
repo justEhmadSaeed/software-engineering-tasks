@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace cSharp {
     public class Student {
@@ -94,9 +95,7 @@ namespace cSharp {
         }
         public int getSemesters() {
             int[] semesters = new int[8];
-            // for (int i = 0; i < semesters.Length; i++) {
-            //     semesters[co]
-            // }
+
             foreach (var course in courses)
                 semesters[course.semester]++;
 
@@ -106,6 +105,17 @@ namespace cSharp {
                     count++;
             }
             return count;
+        }
+        public double getSemesterGPA(int semester) {
+            double scoreSum = 0;
+            int cdhrSum = 0;
+            foreach (var course in courses) {
+                if (course.semester == semester) {
+                    scoreSum += course.getGradePoints() * course.credit_hrs;
+                    cdhrSum += course.credit_hrs;
+                }
+            }
+            return Math.Round(scoreSum/cdhrSum, 3);
         }
         public void tostring() {
             Console.WriteLine("Name: " + studentName);
