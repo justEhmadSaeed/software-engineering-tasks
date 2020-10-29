@@ -6,6 +6,7 @@ using System.Collections.Generic;
 namespace cSharp {
     class Section {
         public List<Student> StudentList;
+        public Section section;
         public Section() {
             StudentList = new List<Student>();
         }

@@ -28,6 +28,8 @@ namespace cSharp {
             cs18.AddStudent(std1);
             cs18.AddStudent(std2);
             cs18.ListofStudents();
+            Console.WriteLine("");
+            Console.WriteLine("");
             cs18.ListofSuspendedStudents();
         }
     }
