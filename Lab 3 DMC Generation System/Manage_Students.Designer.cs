@@ -1,8 +1,8 @@
 ﻿namespace DMC_Generation_System
 {
-    partial class Main_Form
+    partial class Manage_Students
     {
-        /// <summary>
+        // <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
@@ -38,7 +38,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.manage_students_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -153,26 +152,12 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "CS Department";
             // 
-            // manage_students_button
-            // 
-            this.manage_students_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.manage_students_button.FlatAppearance.BorderSize = 2;
-            this.manage_students_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manage_students_button.Location = new System.Drawing.Point(44, 242);
-            this.manage_students_button.Name = "manage_students_button";
-            this.manage_students_button.Size = new System.Drawing.Size(159, 36);
-            this.manage_students_button.TabIndex = 10;
-            this.manage_students_button.Text = "Manage Students";
-            this.manage_students_button.UseVisualStyleBackColor = true;
-            this.manage_students_button.Click += new System.EventHandler(this.manage_students_button_Click);
-            // 
-            // Main_Form
+            // Manage_Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(696, 417);
-            this.Controls.Add(this.manage_students_button);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -184,7 +169,7 @@
             this.Controls.Add(this.studentcount);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.Name = "Main_Form";
+            this.Name = "Manage_Students";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DMC Generation System";
@@ -205,7 +190,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button manage_students_button;
     }
 }
-
