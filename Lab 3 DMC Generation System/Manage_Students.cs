@@ -16,5 +16,17 @@ namespace DMC_Generation_System
         {
             InitializeComponent();
         }
+
+        private void add_button_Click(object sender, EventArgs e)
+        {
+            new Add_Students().Show();
+            this.Hide();
+        }
+
+        private void back_button_Click(object sender, EventArgs e)
+        {
+            new Main_Form().Show();
+            this.Hide();
+        }
     }
 }
