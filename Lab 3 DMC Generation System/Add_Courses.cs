@@ -10,21 +10,17 @@ using System.Windows.Forms;
 
 namespace DMC_Generation_System
 {
-    public partial class Add_Students : Form
+    public partial class Add_Courses : Form
     {
-        public Add_Students()
+        public Add_Courses()
         {
             InitializeComponent();
         }
-        private void add_button_Click(object sender, EventArgs e)
-        {
-            new Add_Courses().Show();
-            this.Hide();
-        }
+      
 
         private void back_button_Click(object sender, EventArgs e)
         {
-            new Manage_Students().Show();
+            new Add_Students().Show();
             this.Hide();
         }
 
