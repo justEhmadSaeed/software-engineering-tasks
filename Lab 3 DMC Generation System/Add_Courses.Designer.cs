@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.name_box = new System.Windows.Forms.TextBox();
+            this.id_box = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.reg_no_box = new System.Windows.Forms.TextBox();
+            this.name_box = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.creditHrs_box = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,13 +43,13 @@
             this.marks_box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // name_box
+            // id_box
             // 
-            this.name_box.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_box.Location = new System.Drawing.Point(242, 100);
-            this.name_box.Name = "name_box";
-            this.name_box.Size = new System.Drawing.Size(179, 25);
-            this.name_box.TabIndex = 13;
+            this.id_box.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id_box.Location = new System.Drawing.Point(242, 100);
+            this.id_box.Name = "id_box";
+            this.id_box.Size = new System.Drawing.Size(179, 25);
+            this.id_box.TabIndex = 13;
             // 
             // label1
             // 
@@ -71,13 +71,13 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Name";
             // 
-            // reg_no_box
+            // name_box
             // 
-            this.reg_no_box.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reg_no_box.Location = new System.Drawing.Point(242, 133);
-            this.reg_no_box.Name = "reg_no_box";
-            this.reg_no_box.Size = new System.Drawing.Size(179, 25);
-            this.reg_no_box.TabIndex = 15;
+            this.name_box.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_box.Location = new System.Drawing.Point(242, 133);
+            this.name_box.Name = "name_box";
+            this.name_box.Size = new System.Drawing.Size(179, 25);
+            this.name_box.TabIndex = 15;
             // 
             // label3
             // 
@@ -133,6 +133,7 @@
             this.save_button.TabIndex = 22;
             this.save_button.Text = "Save";
             this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.Click += new System.EventHandler(this.save_button_Click);
             // 
             // semester_box
             // 
@@ -197,9 +198,9 @@
             this.Controls.Add(this.creditHrs_box);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.reg_no_box);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.name_box);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.id_box);
             this.MaximizeBox = false;
             this.Name = "Add_Courses";
             this.Opacity = 0.95D;
@@ -211,10 +212,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox name_box;
+        private System.Windows.Forms.TextBox id_box;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox reg_no_box;
+        private System.Windows.Forms.TextBox name_box;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox creditHrs_box;
         private System.Windows.Forms.Label label4;
