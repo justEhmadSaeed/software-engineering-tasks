@@ -39,13 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.degree_box = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.cancel_button = new System.Windows.Forms.Button();
+            this.save_button = new System.Windows.Forms.Button();
             this.course_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.course_title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.credit_hrs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cancel_button = new System.Windows.Forms.Button();
-            this.save_button = new System.Windows.Forms.Button();
+            this.edit_column = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.delete_column = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@
             this.course_title,
             this.credit_hrs,
             this.marks,
-            this.action});
+            this.edit_column,
+            this.delete_column});
             this.dataGridView1.Location = new System.Drawing.Point(44, 192);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(500, 207);
@@ -157,6 +159,28 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Courses";
             // 
+            // cancel_button
+            // 
+            this.cancel_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_button.Location = new System.Drawing.Point(372, 405);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(83, 29);
+            this.cancel_button.TabIndex = 21;
+            this.cancel_button.Text = "Cancel";
+            this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
+            // 
+            // save_button
+            // 
+            this.save_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_button.Location = new System.Drawing.Point(461, 405);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(83, 29);
+            this.save_button.TabIndex = 22;
+            this.save_button.Text = "Save";
+            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.Click += new System.EventHandler(this.save_button_Click);
+            // 
             // course_id
             // 
             this.course_id.HeaderText = "Course ID";
@@ -180,31 +204,17 @@
             this.marks.HeaderText = "Marks";
             this.marks.Name = "marks";
             // 
-            // action
+            // edit_column
             // 
-            this.action.HeaderText = "Action";
-            this.action.Name = "action";
+            this.edit_column.HeaderText = "Edit";
+            this.edit_column.Name = "edit_column";
+            this.edit_column.Width = 60;
             // 
-            // cancel_button
+            // delete_column
             // 
-            this.cancel_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_button.Location = new System.Drawing.Point(372, 405);
-            this.cancel_button.Name = "cancel_button";
-            this.cancel_button.Size = new System.Drawing.Size(83, 29);
-            this.cancel_button.TabIndex = 21;
-            this.cancel_button.Text = "Cancel";
-            this.cancel_button.UseVisualStyleBackColor = true;
-            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
-            // 
-            // save_button
-            // 
-            this.save_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_button.Location = new System.Drawing.Point(461, 405);
-            this.save_button.Name = "save_button";
-            this.save_button.Size = new System.Drawing.Size(83, 29);
-            this.save_button.TabIndex = 22;
-            this.save_button.Text = "Save";
-            this.save_button.UseVisualStyleBackColor = true;
+            this.delete_column.HeaderText = "Delete";
+            this.delete_column.Name = "delete_column";
+            this.delete_column.Width = 60;
             // 
             // Add_Students
             // 
@@ -246,12 +256,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox degree_box;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.Button save_button;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_title;
         private System.Windows.Forms.DataGridViewTextBoxColumn credit_hrs;
         private System.Windows.Forms.DataGridViewTextBoxColumn marks;
-        private System.Windows.Forms.DataGridViewButtonColumn action;
-        private System.Windows.Forms.Button cancel_button;
-        private System.Windows.Forms.Button save_button;
+        private System.Windows.Forms.DataGridViewButtonColumn edit_column;
+        private System.Windows.Forms.DataGridViewButtonColumn delete_column;
     }
 }
