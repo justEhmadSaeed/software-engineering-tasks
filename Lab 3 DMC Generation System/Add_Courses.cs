@@ -40,50 +40,51 @@ namespace DMC_Generation_System
             string errorMsg = "";
             int errorCount = 0;
             Regex r = new Regex(@"^[0-9][0-9]?$|^100$");
+            // Course_Id validation
             if (course_id.Length < 2 || course_id.Length > 8 || !char.IsLetter(course_id[0]))
             {
                 errorCount++;
                 errorMsg += errorCount.ToString() + ". Kindly Enter Valid Course ID.";
             }
+            // Course_title validation
             if (course_title.Length >= 10 && course_title.Length <= 35)
             {
                 for (int i = 0; i < course_title.Length; i++)
-                {
                     if (!(char.IsLetter(course_title[i]) || course_title[i] == ' '))
                     {
                         errorCount++;
                         errorMsg += Environment.NewLine + errorCount.ToString() + ". Coures title must contain only letters.";
                         break;
                     }
-                }
             }
             else
             {
                 errorCount++;
                 errorMsg += Environment.NewLine + errorCount.ToString() + ". Length of course title should be from 10 to 35.";
             }
+            // Credit Hours Validation
             if (credit_hrs.Length < 1)
             {
                 errorCount++;
                 errorMsg += Environment.NewLine + errorCount.ToString() + ". Please Select Credit Hours.";
             }
+            // Semester Validation
             if (semester.Length < 1)
             {
                 errorCount++;
                 errorMsg += Environment.NewLine + errorCount.ToString() + ". Please Select Semester.";
             }
+            // Marks Validation
             if (!r.IsMatch(marks))
             {
                 errorCount++;
                 errorMsg += Environment.NewLine + errorCount.ToString() + ". Marks should be between 0 and 100.";
             }
+            // Check if there are any errors.
             if (errorCount > 0)
-            {
                 MessageBox.Show(errorMsg);
-            }else
-            {
+            else
                 MessageBox.Show("✔Course added successfully.");
-            }
         }
     }
 }

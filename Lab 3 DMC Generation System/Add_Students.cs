@@ -45,6 +45,7 @@ namespace DMC_Generation_System
             Regex r = new Regex(@"^[a-zA-Z]+$");
             string errorMsg = "";
             int errorCount = 0;
+
             if (!r.IsMatch(name))
             {
                 errorCount++;
@@ -81,8 +82,10 @@ namespace DMC_Generation_System
                         else
                             validReg = true;
                 }
+                
                 if (reg_no[4] != '-' || reg_no[7] != '-')
                     validReg = false;
+
                 if (!validReg)
                 {
                     errorCount++;
