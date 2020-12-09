@@ -1,30 +1,10 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 int pseudoRand(const string& name, int age);
 int passStrength(string pass);
-
-	int vowels = 0;
-	for (char i : name) {
-		if (i == 'a' || i == 'e' || i == 'i' ||
-			i == 'o' || i == 'u' || i == 'A' ||
-			i == 'E' || i == 'I' || i == 'O' ||
-			i == 'U')
-		{
-			++vowels;
-		}
-	}
-
-	int reversedNumber = 0, remainder;
-	while (age != 0) {
-		remainder = age % 10;
-		reversedNumber = reversedNumber * 10 + remainder;
-		age /= 10;
-	}
-
-	return vowels * reversedNumber;
-}
 
 int main(int, char**)
 {
@@ -87,7 +67,7 @@ int main(int, char**)
 			cout << "Enter your account number(Digits only): ";
 		}
 		cout << "\nEnter your pin number: " << endl;
-		while (!(cin >> userPin))
+		while (!(cin >> userPin))	// Keep asking for input until a valid user userPin is entered
 		{
 			cin.clear();
 			cin.ignore(10000, '\n');
@@ -99,7 +79,36 @@ int main(int, char**)
 			cout << "The account number and the pin entered do not match the records. \n\n";
 	} while (notMatch);	// If userAcc and Pin do not match
 
-	}
+
+	// Username Input from the user
+	string username;
+	bool found = false;
+	do {
+		cout << "\nEnter a Username: ";
+		cin >> username;
+
+		// Reading data from the file
+		ifstream inData;
+		string temp;
+		inData.open("2FA_users.txt");
+		// Keep matching username until the end of file is achieved or the file failed to open
+		while (!inData.eof() && !inData.fail())
+		{
+			// Fetch complete line
+			getline(inData, temp);
+			// Split from starting character of the line to the first space
+			// to get username from file
+			temp = temp.substr(0, temp.find(' '));
+			if (temp == username) {	// if user exists, toggle found to true and break the loop
+				cout << "Username alread exists.";
+				found = true;
+				break;
+			}// else make it false
+			found = false;
+		}
+		inData.close();
+
+	} while (found);	// keep asking for username until found is false
 	// Password Input from the user
 	string password;
 	int strength = 0;	// Initial value of the strength
@@ -129,6 +138,13 @@ int main(int, char**)
 			cout << "4 Uppercase Letters, 3 Numbers and 3 Symbols. \n";
 		}
 	}
+	// Writing to the File
+	ofstream outData;
+	outData.open("2FA_users.txt", ios_base::app);	// ios_base::app to append instead of overwriting
+	outData << username << " " << userAcc << " " << userPin << " " << password << endl;
+	outData.close();
+
+}
 
 // Function to generate a pin for the user
 int pseudoRand(const string& name, int age) {
