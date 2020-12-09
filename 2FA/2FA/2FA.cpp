@@ -144,6 +144,9 @@ int main(int, char**)
 	outData << username << " " << userAcc << " " << userPin << " " << password << endl;
 	outData.close();
 
+	cout << "\n Credentials have been saved in the file successfully.";
+	cout << "\n Thank you. :)\n";
+
 }
 
 // Function to generate a pin for the user
